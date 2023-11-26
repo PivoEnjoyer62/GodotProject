@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyayg5eee0rm5"]
+
+[ext_resource type="PackedScene" uid="uid://c86lxibnnvul" path="res://sprite.glb" id="1_vbdnk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3p0j"]
+size = Vector3(40, 0, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4m86"]
+size = Vector3(39.7037, 0.5, 39.3085)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276478, 0.378713, -0.135173)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22652, 0.344301, 4.92827)
+mesh = SubResource("BoxMesh_e3p0j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05477, 0.970795, 4.89183)
+visible = false
+shape = SubResource("BoxShape3D_m4m86")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="sprite" parent="CharacterBody3D" instance=ExtResource("1_vbdnk")]
+transform = Transform3D(-0.999945, 0.0104544, 0, -0.0104544, -0.999945, 0, 0, 0, 1, 0.645644, 0.762126, 0.20643)
